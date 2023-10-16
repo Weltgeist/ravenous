@@ -27,7 +27,7 @@ function BusinessList (){
 
 
     return (
-    <Container>{gridComponent}
+    <Container fluid>{gridComponent}
     </Container>
     )
 
