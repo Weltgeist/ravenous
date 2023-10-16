@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Business from './Business';
+import BusinessList from './BusinessList';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Business/>
+        <BusinessList/>
       </header>
     </div>
   );
