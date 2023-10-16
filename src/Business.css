@@ -6,11 +6,11 @@
     color:black;
 }
 
-.business-details.flex-container {
+/* .business-details.flex-container {
     display: flex;
     justify-content: space-between;
 
-}
+} */
 
 .business-details {
     font-size: 40px;
