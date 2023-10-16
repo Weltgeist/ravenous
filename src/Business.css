@@ -1,0 +1,28 @@
+.business img {
+    height: 600px;
+}
+
+.business {
+    color:black;
+}
+
+.business-details.flex-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.business-details {
+    font-size: 40px;
+}
+
+.business-category {
+    color: #D2C04B;
+    font-size: 40px;
+}
+
+.business-rating {
+    color: #D2C04B;
+    font-size: 40px;
+}
+
