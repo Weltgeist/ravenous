@@ -6,11 +6,19 @@
     font-size: 0.75rem;
 }
 
+.business-name {
+    font-weight: bold;
+}
+
 .business-category {
     color: #D2C04B;
 }
 
 .business-rating {
     color: #D2C04B;
+}
+
+.business-state-zip  p {
+    display: inline;
 }
 

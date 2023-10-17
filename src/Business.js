@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container';
 
 function Business (){
     return (
-        <Card style={{ width: '18rem' }} className='business'>
+        <Card style={{ width: '16rem' }} className='business'>
             <Card.Img  
             className='business-pic'
             src = {business.src}
@@ -19,7 +19,7 @@ function Business (){
                 <Card.Title className='business-name'>{business.name.toUpperCase()}</Card.Title>
                 <Container fluid className='business-details'>
                 <Row>
-                    <Col ><Card.Text className='business-address'>{business.address}</Card.Text></Col>
+                    <Col width><Card.Text className='business-address'>{business.address}</Card.Text></Col>
                     <Col><Card.Text className='business-category'>{business.category.toUpperCase()}</Card.Text></Col>
                 </Row>
                 <Row>
@@ -27,7 +27,7 @@ function Business (){
                     <Col><Card.Text className='business-rating'>{business.rating} Star</Card.Text></Col>
                 </Row>
                 <Row>
-                    <Col><Card.Text className='business-state'>{business.state}</Card.Text><Card.Text className='business-zipcode'>{business.zipCode}</Card.Text></Col>
+                    <Col className='business-state-zip'><Card.Text className='business-state'>{business.state} </Card.Text><Card.Text className='business-zipcode'>{business.zipCode}</Card.Text></Col>
                     <Col><Card.Text className='business-review'>{business.reviewCount} Reviews</Card.Text></Col>
                 </Row>
                 </Container>
