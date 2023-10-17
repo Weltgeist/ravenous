@@ -24,11 +24,11 @@ function Business (){
                 </Row>
                 <Row>
                     <Col xs={8}  md={8} lg={8} xl={8} xxl={8}><Card.Text className='business-city'>{business.city}</Card.Text></Col>
-                    <Col xs={4} md={4} lg={4} xl={4} xxl={4}><Card.Text className='business-rating'>{business.rating} Star</Card.Text></Col>
+                    <Col xs={4} md={4} lg={4} xl={4} xxl={4}><Card.Text className='business-rating'>{business.rating} stars</Card.Text></Col>
                 </Row>
                 <Row>
                     <Col xs={8}  md={8} lg={8} xl={8} xxl={8} className='business-state-zip'><Card.Text className='business-state'>{business.state} </Card.Text><Card.Text className='business-zipcode'>{business.zipCode}</Card.Text></Col>
-                    <Col xs={4} md={4} lg={4} xl={4} xxl={4}><Card.Text className='business-review'>{business.reviewCount} Reviews</Card.Text></Col>
+                    <Col xs={4} md={4} lg={4} xl={4} xxl={4}><Card.Text className='business-review'>{business.reviewCount} reviews</Card.Text></Col>
                 </Row>
                 </Container>
             </Card.Body>
