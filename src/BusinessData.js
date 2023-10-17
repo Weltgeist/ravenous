@@ -6,7 +6,7 @@ address: '602 W Sugar Creek Rd #4',
 city: 'Charlotte',
 state: 'NC',
 zipCode: '28213',
-category: 'West African',
+category: 'W African',
 rating: 4.5,
 reviewCount: 120
 
