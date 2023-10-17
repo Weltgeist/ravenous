@@ -1,5 +1,5 @@
 import React from 'react';
-//import './Business.css';
+import './Business.css';
 import business from './BusinessData' ;
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';

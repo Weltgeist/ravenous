@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container/';
 import Row from 'react-bootstrap/Row/';
 import Col from 'react-bootstrap/Col/';
 import _ from 'lodash';
+import './BusinessList.css';
 
 function BusinessList (){
 
@@ -14,7 +15,7 @@ function BusinessList (){
     }
     //Mapping all items as Columns
     const listItems = items.map( item =>  {
-        return ( <Col><Business/></Col>)
+        return ( <Col className={'business-items'}><Business/></Col>)
     });
 
     //Splitting Columns into a grid
@@ -27,7 +28,7 @@ function BusinessList (){
 
 
     return (
-    <Container fluid>{gridComponent}
+    <Container fluid={'lg'}>{gridComponent}
     </Container>
     )
 
