@@ -1,29 +1,39 @@
-import React from 'react'
-import './Business.css'
-import business from './BusinessData' 
+import React from 'react';
+//import './Business.css';
+import business from './BusinessData' ;
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 function Business (){
-    return (<article className = 'business'>
-        <header>
-            <img 
+    return (
+        <Card style={{ width: '18rem' }} className='business'>
+            <Card.Img  
+            className='business-pic'
             src = {business.src}
             alt = {business.alt}
             />
-            <h3 className='business-name'>{business.name.toUpperCase()}</h3>
-        </header>
-        <section className='business-details flex-container'>
-            <article>
-                <p className='business-adress'>{business.address}</p>
-                <p className='business-city'>{business.city}</p>
-                <p><span className='business-state'>{business.state}</span> <span className='business-zipcode'>{business.zipCode}</span></p>
-            </article>
-            <aside>
-                <p className='business-category'>{business.category.toUpperCase()}</p>
-                <p className='business-rating'>{business.rating} Star</p>
-                <p className='business-review'>{business.reviewCount} Reviews</p>
-            </aside>
-        </section>
-    </article>);
+            <Card.Body>
+                <Card.Title className='business-name'>{business.name.toUpperCase()}</Card.Title>
+                <Container fluid className='business-details'>
+                <Row>
+                    <Col ><Card.Text className='business-address'>{business.address}</Card.Text></Col>
+                    <Col><Card.Text className='business-category'>{business.category.toUpperCase()}</Card.Text></Col>
+                </Row>
+                <Row>
+                    <Col ><Card.Text className='business-city'>{business.city}</Card.Text></Col>
+                    <Col><Card.Text className='business-rating'>{business.rating} Star</Card.Text></Col>
+                </Row>
+                <Row>
+                    <Col><Card.Text className='business-state'>{business.state}</Card.Text><Card.Text className='business-zipcode'>{business.zipCode}</Card.Text></Col>
+                    <Col><Card.Text className='business-review'>{business.reviewCount} Reviews</Card.Text></Col>
+                </Row>
+                </Container>
+            </Card.Body>
+        </Card>
+    );
 
 }
 
