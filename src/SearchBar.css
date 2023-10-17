@@ -1,0 +1,13 @@
+.form-stack-container {
+    justify-content: space-evenly;
+}
+
+.nav-bar-container{
+    background-image: url(https://images.pexels.com/photos/5863647/pexels-photo-5863647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover ;
+    height: 20rem;
+}
+
+.navbar-button {
+    width: 6rem;
+}
