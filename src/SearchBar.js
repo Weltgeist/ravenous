@@ -45,13 +45,13 @@ function SearchBar (){
                     </Stack>
                         <Nav fill variant="tabs"  onSelect={handleSelect}>
                             <Nav.Item>
-                                <Nav.Link eventKey="link-0">Best Match</Nav.Link>
+                                <Nav.Link eventKey="best_match">Best Match</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="link-1">Highest Rated</Nav.Link>
+                                <Nav.Link eventKey="rating">Highest Rated</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="link-2">Most Reviewed</Nav.Link>
+                                <Nav.Link eventKey="review_count">Most Reviewed</Nav.Link>
                             </Nav.Item>
                         </Nav>
                 </Stack>
