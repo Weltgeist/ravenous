@@ -6,8 +6,14 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Stack from 'react-bootstrap/Stack';
 import { Container } from 'react-bootstrap';
 import './SearchBar.css'
+import Nav from 'react-bootstrap/Nav';
 
 function SearchBar (){
+
+    function handleSelect(selectedKey){
+        alert(`selected ${selectedKey}`)
+    }
+
     return (
         <Container className = 'nav-bar-container'>
             <Navbar className=".bg-transparent  nav-bar-item">{/* justify-content-between */}
@@ -37,6 +43,17 @@ function SearchBar (){
                     <Stack direction="horizontal" gap={3} className='form-stack-container'>
                         <Button type="submit" className = 'navbar-button'>Submit</Button>
                     </Stack>
+                        <Nav fill variant="tabs"  onSelect={handleSelect}>
+                            <Nav.Item>
+                                <Nav.Link eventKey="link-0">Best Match</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="link-1">Highest Rated</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="link-2">Most Reviewed</Nav.Link>
+                            </Nav.Item>
+                        </Nav>
                 </Stack>
             </Navbar>
         </Container>
