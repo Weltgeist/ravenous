@@ -1,5 +1,5 @@
 import React from "react";
-import Business from './Business'
+import Business from '../Business/Business'
 import Container from 'react-bootstrap/Container/';
 import Row from 'react-bootstrap/Row/';
 import Col from 'react-bootstrap/Col/';
