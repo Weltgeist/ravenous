@@ -3,8 +3,9 @@ import Business from '../Business/Business'
 import Container from 'react-bootstrap/Container/';
 import Row from 'react-bootstrap/Row/';
 import Col from 'react-bootstrap/Col/';
-import _ from 'lodash';
+import {chunk} from 'lodash';
 import './BusinessList.css';
+import business from './BusinessData' ;
 
 function BusinessList (){
 
@@ -15,11 +16,22 @@ function BusinessList (){
     }
     //Mapping all items as Columns
     const listItems = items.map( item =>  {
-        return ( <Col className={'business-items'}><Business/></Col>)
+        return ( <Col className={'business-items'}><Business
+        src = {business.src}
+        alt = {business.alt}
+        name = {business.name}
+        address = {business.address}
+        city = {business.city}
+        state = {business.state}
+        zipCode = {business.zipCode}
+        category = {business.category}
+        rating = {business.rating}
+        reviewCount = {business.reviewCount}
+        /></Col>)
     });
 
     //Splitting Columns into a grid
-    const gridItems = _.chunk(listItems,Math.floor((listItems.length)/3));
+    const gridItems = chunk(listItems,Math.floor((listItems.length)/3));
 
     const gridComponent = gridItems.map( items => {
         return (<Row>{items}</Row>);
