@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-require('dotenv').config();
+//require('dotenv').config();
 console.log(process.env);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
