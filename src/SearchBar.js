@@ -10,6 +10,50 @@ import Nav from 'react-bootstrap/Nav';
 
 function SearchBar (){
 
+    const API_HOST = "https://api.yelp.com";
+    const SEARCH_PATH = "/v3/businesses/search";
+    const BUSINESS_PATH = "/v3/businesses/"
+    const API_KEY = process.env["REACT_APP_YELP_API_KEY"]; // https://dev.to/deammer/loading-environment-variables-in-js-apps-1p7p
+
+    const filteredSearch = {
+        best_match: 'sort_by=best_match&limit=20',
+        rating:'sort_by=rating&limit=20',
+        review_count:'sort_by=review_count&limit=20'
+
+    }
+
+    function getYelpSearch( selectedSearch) {
+
+        let searchAdd = '';
+
+        // Select a filter use case
+        if (selectedSearch === 'best_match'){
+            searchAdd = filteredSearch.best_match;
+        } else if (selectedSearch === 'rating') {
+            searchAdd = filteredSearch.rating;
+        } else if (selectedSearch === 'review_count') {
+            searchAdd = filteredSearch.review_count;
+        }
+
+        // Yelp REST API Search
+        const options = {
+            method: 'GET',
+            headers: {
+              accept: 'application/json',
+              Authorization: API_KEY
+            }
+          };     
+
+        // fetch Call
+        const data = fetch(`${API_HOST}${SEARCH_PATH}?${searchAdd}`, options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+
+        return data;
+
+    }
+
     function handleSelect(selectedKey){
         alert(`selected ${selectedKey}`)
     }
