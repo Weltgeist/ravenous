@@ -5,28 +5,25 @@ import Row from 'react-bootstrap/Row/';
 import Col from 'react-bootstrap/Col/';
 import {chunk} from 'lodash';
 import './BusinessList.css';
-import business from './BusinessData' ;
 
-function BusinessList (){
+function BusinessList (props){
 
     //Creating Items 
-    const items = []
-    for (let index = 0; index < 12; index++) {
-         items.push('Business')
-    }
+    let businessList = props.businessList;
+
     //Mapping all items as Columns
-    const listItems = items.map( item =>  {
+    const listItems = businessList.map( businessItem =>  {
         return ( <Col className={'business-items'}><Business
-        src = {business.src}
-        alt = {business.alt}
-        name = {business.name}
-        address = {business.address}
-        city = {business.city}
-        state = {business.state}
-        zipCode = {business.zipCode}
-        category = {business.category}
-        rating = {business.rating}
-        reviewCount = {business.reviewCount}
+        src = {businessItem.src}
+        alt = {businessItem.alt}
+        name = {businessItem.name}
+        address = {businessItem.address}
+        city = {businessItem.city}
+        state = {businessItem.state}
+        zipCode = {businessItem.zipCode}
+        category = {businessItem.category}
+        rating = {businessItem.rating}
+        reviewCount = {businessItem.reviewCount}
         /></Col>)
     });
 
