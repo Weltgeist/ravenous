@@ -6,10 +6,7 @@ import Col from 'react-bootstrap/Col/';
 import {chunk} from 'lodash';
 import './BusinessList.css';
 
-function BusinessList (props){
-
-    //Creating Items 
-    let businessList = props.businessList;
+function BusinessList ({businessList}){
 
     //Mapping all items as Columns
     const listItems = businessList.map( businessItem =>  {
