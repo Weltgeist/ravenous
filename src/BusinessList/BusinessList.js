@@ -9,7 +9,7 @@ import './BusinessList.css';
 function BusinessList ({businessList}){
 
     //Mapping all items as Columns
-    const listItems = businessList.map( businessItem =>  {
+    const listItems = businessList.map( (businessItem,index) =>  {
         return ( <Col className={'business-items'}><Business
         src = {businessItem.src}
         alt = {businessItem.alt}
@@ -21,6 +21,7 @@ function BusinessList ({businessList}){
         category = {businessItem.category}
         rating = {businessItem.rating}
         reviewCount = {businessItem.reviewCount}
+        key={`${businessItem.name}-${index}`}
         /></Col>)
     });
 
