@@ -2,7 +2,7 @@ import './App.css';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar'
 import business from './BusinessData' ;
-
+import  { useState } from 'react';
 
 function App() {
 
