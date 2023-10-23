@@ -3,6 +3,7 @@ import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar'
 import business from './BusinessData' ;
 import  { useState } from 'react';
+import  { useEffect } from 'react';
 
 function App() {
 
