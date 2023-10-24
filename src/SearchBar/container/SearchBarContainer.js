@@ -53,12 +53,8 @@ function SearchBarContainer ({onYelpSearch}){
     //handle location input
     function handleSubmit(e){
         e.preventDefault();
-        console.log( e.target[0].value);
-        console.log( e.target[1].value);
-        console.log( filterOption);
-        console.log( search);
-        console.log( location);
         alert(`searching ${filterOption} ${search} around ${location}  `)
+        console.log(`searching ${filterOption} ${search} around ${location}  `)
         //onYelpSearch(getYelpSearch())
     }
 
