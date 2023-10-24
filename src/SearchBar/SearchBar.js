@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -8,7 +8,11 @@ import { Container } from 'react-bootstrap';
 import './SearchBar.css'
 import Nav from 'react-bootstrap/Nav';
 
+
 function SearchBar (){
+    const [search, setSearch] = useState("");
+    const [location, setLocation] = useState("");
+    const [option, setOption] = useState("");
 
     const API_HOST = "https://api.yelp.com";
     const SEARCH_PATH = "/v3/businesses/search";
@@ -53,52 +57,69 @@ function SearchBar (){
         return data;
 
     }
+    function handleSearch(e,setFunc){
+        setSearch(e.target.value);
+    }
+    function handleLocation(e,setFunc){
+        setLocation(e.target.value);
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log( e.target[0].value);
+        console.log( e.target[1].value);
+        console.log( option);
+        console.log( search);
+        console.log( location);
+        alert(`here`)
+    }
 
     function handleSelect(selectedKey){
         alert(`selected ${selectedKey}`)
+        setOption(selectedKey)
     }
 
     return (
         <Container className = 'nav-bar-container'>
             <Navbar className=".bg-transparent  nav-bar-item">{/* justify-content-between */}
-                <Stack gap={3} className='form-stack-container'>
-                    <Stack direction="horizontal" gap={3} className='form-stack-container'>
-                    <Form inline>
-                        <InputGroup>
-                        <Form.Control
-                            type="text"
-                            placeholder="Search Business"
-                            aria-label="Search Business"
-                            aria-describedby="basic-addon1"
-                        />
-                        </InputGroup>
-                    </Form>
-                    <Form inline> 
-                        <InputGroup>
+                <Form inline onSubmit={handleSubmit}>
+                    <Stack gap={3} className='form-stack-container'>
+                        <Stack direction="horizontal" gap={3} className='form-stack-container'>
+                            <InputGroup>
                             <Form.Control
-                            type="text"
-                            placeholder="Where?"
-                            aria-label="Where?"
-                            className=" mr-sm-2"
+                                type="text"
+                                placeholder="Search Business"
+                                aria-label="Search Business"
+                                aria-describedby="basic-addon1"
+                                onChange = {handleSearch}
                             />
-                        </InputGroup>
-                    </Form>
+                            </InputGroup>
+                            <InputGroup>
+                                <Form.Control
+                                type="text"
+                                placeholder="Where?"
+                                aria-label="Where?"
+                                className=" mr-sm-2"
+                                onChange = {handleLocation}
+                                />
+                            </InputGroup>
+                        </Stack>
+                        <Stack direction="horizontal" gap={3} className='form-stack-container'>
+                            <Button type="submit" className = 'navbar-button'>Submit</Button>
+                        </Stack>
+                            <Nav fill variant="tabs"  onSelect={handleSelect}>
+                                <Nav.Item>
+                                    <Nav.Link eventKey="best_match">Best Match</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link eventKey="rating">Highest Rated</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link eventKey="review_count">Most Reviewed</Nav.Link>
+                                </Nav.Item>
+                            </Nav>
                     </Stack>
-                    <Stack direction="horizontal" gap={3} className='form-stack-container'>
-                        <Button type="submit" className = 'navbar-button'>Submit</Button>
-                    </Stack>
-                        <Nav fill variant="tabs"  onSelect={handleSelect}>
-                            <Nav.Item>
-                                <Nav.Link eventKey="best_match">Best Match</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="rating">Highest Rated</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="review_count">Most Reviewed</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                </Stack>
+                </Form>
             </Navbar>
         </Container>
       );
