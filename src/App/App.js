@@ -7,6 +7,12 @@ import  { useEffect } from 'react';
 
 function App() {
 
+  const[searchData,setsearchData] = useState([]);
+
+  function handleSearchData(data){
+    setsearchData(data);
+  }
+
  //Creating Items 
   const businessList = []
   for (let index = 0; index < 12; index++) {
@@ -16,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SearchBarContainer/>
+        <SearchBarContainer onYelpSearch= {handleSearchData}/>
         <BusinessList businessList = {businessList}/>
       </header>
     </div>

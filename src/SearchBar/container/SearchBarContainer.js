@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from '../component/SearchBar';
 
 
-function SearchBarContainer (){
+function SearchBarContainer ({onYelpSearch}){
     const [search, setSearch] = useState("");
     const [location, setLocation] = useState("");
     const [filterOption, setFilterOption] = useState("");
@@ -58,7 +58,8 @@ function SearchBarContainer (){
         console.log( filterOption);
         console.log( search);
         console.log( location);
-        alert(`submited`)
+        alert(`searching ${filterOption} ${search} around ${location}  `)
+        //onYelpSearch(getYelpSearch())
     }
 
     // handle tab selection
