@@ -1,6 +1,6 @@
 import './App.css';
 import BusinessList from '../BusinessList/BusinessList';
-import SearchBar from '../SearchBar/SearchBar'
+import SearchBarContainer from '../SearchBar/container/SearchBarContainer'
 import business from './BusinessData' ;
 import  { useState } from 'react';
 import  { useEffect } from 'react';
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SearchBar/>
+        <SearchBarContainer/>
         <BusinessList businessList = {businessList}/>
       </header>
     </div>
