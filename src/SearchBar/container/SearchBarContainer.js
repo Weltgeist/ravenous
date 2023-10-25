@@ -9,6 +9,8 @@ function SearchBarContainer ({onYelpSearch}){
     const [location, setLocation] = useState("");
     const [filterOption, setFilterOption] = useState("");
 
+    const  yelpCall = new YelpApiConnector();
+
     //handle search input
     function handleSearch(e){
         setSearch(e.target.value);
@@ -25,6 +27,7 @@ function SearchBarContainer ({onYelpSearch}){
         alert(`searching ${filterOption} ${search} around ${location}  `)
         console.log(`searching ${filterOption} ${search} around ${location}  `)
         //onYelpSearch(getYelpSearch(search,location,filterOption))
+        yelpCall.getYelpSearch(search,location,filterOption);
     }
 
     // handle tab selection
