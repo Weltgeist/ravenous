@@ -22,11 +22,13 @@ export class YelpApiConnector{
       review_count:'sort_by=review_count&limit=20'
 
     }
+    this.locationSearch  = 'location='
+    this.term = '&term='
   }
 
   getYelpSearch(search,location,filterOption){
     // fetch Call
-    const data = fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.filteredSearch[filterOption]}`, this.options)
+    const data = fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.filteredSearch[filterOption]}`, this.options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -43,7 +45,9 @@ export function getYelpSearch(search,location,filterOption) {
     //End Point Data
     const API_HOST = "https://api.yelp.com";
     const SEARCH_PATH = "/v3/businesses/search";
-    const BUSINESS_PATH = "/v3/businesses/"
+    const BUSINESS_PATH = "/v3/businesses/";
+    const LOCATION_SEARCH = 'location=';
+    const TERM_SEARCH = '&term=';
     const API_KEY = process.env["REACT_APP_YELP_API_KEY"]; // https://dev.to/deammer/loading-environment-variables-in-js-apps-1p7p
 
     
@@ -65,7 +69,7 @@ export function getYelpSearch(search,location,filterOption) {
       };     
 
     // fetch Call
-    const data = fetch(`${API_HOST}${SEARCH_PATH}?${filteredSearch[filterOption]}`, options)
+    const data = fetch(`${API_HOST}${SEARCH_PATH}?${LOCATION_SEARCH}${location}${TERM_SEARCH}${search}${filteredSearch[filterOption]}`, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
