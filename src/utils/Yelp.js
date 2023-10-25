@@ -12,7 +12,7 @@ export class YelpApiConnector{
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: this.API_KEY
+        Authorization: `Bearer ${this.API_KEY}`
       }
     }; 
     // Yelp REST API filtering option
@@ -60,7 +60,7 @@ export function getYelpSearch(search,location,filterOption) {
         method: 'GET',
         headers: {
           accept: 'application/json',
-          Authorization: API_KEY
+          Authorization: `Bearer ${API_KEY}`
         }
       };     
 
