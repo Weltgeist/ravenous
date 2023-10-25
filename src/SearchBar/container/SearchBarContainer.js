@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from '../component/SearchBar';
-import { getYelpSearch } from './Yelp';
+import { getYelpSearch } from '../../utils/Yelp';
 
 
 function SearchBarContainer ({onYelpSearch}){
