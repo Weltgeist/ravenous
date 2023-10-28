@@ -27,7 +27,12 @@ function SearchBarContainer ({onYelpSearch}){
         alert(`searching ${filterOption} ${search} around ${location}  `)
         console.log(`searching ${filterOption} ${search} around ${location}  `)
         //onYelpSearch(getYelpSearch(search,location,filterOption))
-        yelpCall.getYelpSearch(search,location,filterOption);
+        const data = yelpCall.getYelpSearch(search,location,filterOption);
+        //Updating App with Yelp Search result.
+        data.then( responseStructured => onYelpSearch(responseStructured))
+        .catch(err => console.error(err));
+
+        
     }
 
     // handle tab selection

@@ -10,6 +10,7 @@ function App() {
   const[searchData,setsearchData] = useState([]);
 
   function handleSearchData(data){
+    console.log(data)
     setsearchData(data);
   }
 
@@ -23,7 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <SearchBarContainer onYelpSearch= {handleSearchData}/>
-        <BusinessList businessList = {businessList}/>
+        <BusinessList businessList = {searchData}/>
       </header>
     </div>
   );
