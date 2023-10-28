@@ -1,6 +1,6 @@
 //Class Implementation
 export class YelpApiConnector{
-  constructor({API_HOST = "https://api.yelp.com",SEARCH_PATH = "/v3/businesses/search"}){
+  constructor(API_HOST = "https://api.yelp.com",SEARCH_PATH = "/v3/businesses/search"){
     // When using express to fix CORS issue. Optional, if CORS doesn't work for Yelp call.
     // API_HOST= http://localhost:3001
     // SEARCH_PATH = /yelp/businesses/search
