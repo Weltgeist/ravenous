@@ -34,12 +34,31 @@ export class YelpApiConnector{
     console.log( `${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.sort}${this.filteredSearch[filterOption]}`)
 
     // fetch Call
-    const data = fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.sort}${this.filteredSearch[filterOption]}`, this.options)
+    return fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.sort}${this.filteredSearch[filterOption]}`, this.options)
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then((response) => { 
+              if (response){
+                console.log(response)
+                return response.businesses.map( (business) => {
+                  return {         
+                    src: business.image_url,
+                    alt:business.alias,
+                    name:business.name,
+                    address:business.location.address1,
+                    city:business.location.city,
+                    state:business.location.state,
+                    zipCode:business.location.zip_code,
+                    category:business.categories[0]?.title,
+                    rating:business.rating,
+                    reviewCount:business.review_count
+                  }
+                }
+              )
+            } 
+          }
+        )
         .catch(err => console.error(err));
 
-    return data;
   }
 
 }
