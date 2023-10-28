@@ -30,6 +30,9 @@ export class YelpApiConnector{
   }
 
   getYelpSearch(search,location,filterOption){
+    
+    console.log( `${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.sort}${this.filteredSearch[filterOption]}`)
+
     // fetch Call
     const data = fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.sort}${this.filteredSearch[filterOption]}`, this.options)
         .then(response => response.json())
