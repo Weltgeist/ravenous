@@ -9,7 +9,7 @@ function SearchBarContainer ({onYelpSearch}){
     const [location, setLocation] = useState("");
     const [filterOption, setFilterOption] = useState("");
 
-    const  yelpCall = new YelpApiConnector();
+    const  yelpCall = new YelpApiConnector("http://localhost:3001","/yelp/businesses/search"); //using express server to fix cors issue
 
     //handle search input
     function handleSearch(e){
