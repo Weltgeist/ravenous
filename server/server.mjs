@@ -20,7 +20,7 @@ app.get('/yelp/businesses/search', async (req, res) => {
       `https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sort_by}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`,
         },
       },
     );
