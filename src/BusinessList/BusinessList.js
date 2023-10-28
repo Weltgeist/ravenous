@@ -26,7 +26,7 @@ function BusinessList ({businessList}){
     });
 
     //Splitting Columns into a grid
-    const gridItems = chunk(listItems,Math.floor((listItems.length)/3));
+    const gridItems = chunk(listItems,4);
 
     const gridComponent = gridItems.map( items => {
         return (<Row>{items}</Row>);
