@@ -1,10 +1,12 @@
 //Class Implementation
 export class YelpApiConnector{
-  constructor(){
-
+  constructor({API_HOST = "https://api.yelp.com",SEARCH_PATH = "/v3/businesses/search"}){
+    // When using express to fix CORS issue. Optional, if CORS doesn't work for Yelp call.
+    // API_HOST= http://localhost:3001
+    // SEARCH_PATH = /yelp/businesses/search
     //End Point Data
-    this.API_HOST = "https://api.yelp.com";
-    this.SEARCH_PATH = "/v3/businesses/search";
+    this.API_HOST = API_HOST;
+    this.SEARCH_PATH = SEARCH_PATH;
     this.BUSINESS_PATH = "/v3/businesses/"
     this.API_KEY = process.env["REACT_APP_YELP_API_KEY"]; // https://dev.to/deammer/loading-environment-variables-in-js-apps-1p7p
     // Yelp REST API Search
@@ -16,10 +18,11 @@ export class YelpApiConnector{
       }
     }; 
     // Yelp REST API filtering option
+    this.sort = '&sort_by=';
     this.filteredSearch = {
-      best_match: 'sort_by=best_match&limit=20',
-      rating:'sort_by=rating&limit=20',
-      review_count:'sort_by=review_count&limit=20'
+      best_match: 'best_match&limit=20',
+      rating:'rating&limit=20',
+      review_count:'review_count&limit=20'
 
     }
     this.locationSearch  = 'location='
@@ -28,7 +31,7 @@ export class YelpApiConnector{
 
   getYelpSearch(search,location,filterOption){
     // fetch Call
-    const data = fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.filteredSearch[filterOption]}`, this.options)
+    const data = fetch(`${this.API_HOST}${this.SEARCH_PATH}?${this.locationSearch}${location}${this.term}${search}${this.sort}${this.filteredSearch[filterOption]}`, this.options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -48,14 +51,15 @@ export function getYelpSearch(search,location,filterOption) {
     const BUSINESS_PATH = "/v3/businesses/";
     const LOCATION_SEARCH = 'location=';
     const TERM_SEARCH = '&term=';
+    const SORT_SEARCH = '&sort_by=';
     const API_KEY = process.env["REACT_APP_YELP_API_KEY"]; // https://dev.to/deammer/loading-environment-variables-in-js-apps-1p7p
 
     
     // Yelp REST API filtering option
     const filteredSearch = {
-        best_match: 'sort_by=best_match&limit=20',
-        rating:'sort_by=rating&limit=20',
-        review_count:'sort_by=review_count&limit=20'
+        best_match: 'best_match&limit=20',
+        rating:'rating&limit=20',
+        review_count:'review_count&limit=20'
 
     }
 
@@ -69,7 +73,7 @@ export function getYelpSearch(search,location,filterOption) {
       };     
 
     // fetch Call
-    const data = fetch(`${API_HOST}${SEARCH_PATH}?${LOCATION_SEARCH}${location}${TERM_SEARCH}${search}${filteredSearch[filterOption]}`, options)
+    const data = fetch(`${API_HOST}${SEARCH_PATH}?${LOCATION_SEARCH}${location}${TERM_SEARCH}${search}${SORT_SEARCH}${filteredSearch[filterOption]}`, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
