@@ -3,21 +3,19 @@
 }
 
 .nav-bar-container{
-    background-image: url(https://images.pexels.com/photos/5863647/pexels-photo-5863647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-    background-size: cover ;
-    height: 20rem;  
+    height: 10rem;
 }
-.nav-bar-container:after{
-    position: fixed; /* Sit on top of the page content */
-    width: 100%; /* Full width (cover the whole page) */
+/* .nav-bar-container:after{
+    position: fixed; 
+    width: 100%; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-}
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 2; 
+    cursor: pointer; 
+} */
 
 .navbar-button {
     width: 6rem;
@@ -25,4 +23,14 @@
 
 .nav-form{
     width: 100%
+}
+
+.nav-bar-outer {
+    background-image: url(https://images.pexels.com/photos/5863647/pexels-photo-5863647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover ;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    margin: 0px;
+    margin-bottom: 0px
 }

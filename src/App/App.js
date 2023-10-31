@@ -23,8 +23,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SearchBarContainer onYelpSearch= {handleSearchData}/>
-        <BusinessList businessList = {searchData}/>
+      <h1 id="site-title">Ravenous</h1>
+      <SearchBarContainer onYelpSearch= {handleSearchData}/>
+      <BusinessList businessList = {searchData}/>    
       </header>
     </div>
   );

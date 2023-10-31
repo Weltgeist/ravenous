@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 
 function Business (props){
     return (
-        <Card style={{ width: '19rem' , height: '20rem'}} className='business'>
+        <Card style={{ width: '19rem' , height: '20rem'}} className='business' bg='dark' text='light' >
             <Card.Img  style={{height: '12rem'}}
             className='business-pic'
             src = {props.src}
