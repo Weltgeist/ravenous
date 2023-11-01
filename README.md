@@ -1,13 +1,13 @@
 # Ravenous 
 
-# Project description
+## Project description
 
-## The purpose of your project 
+### The purpose of your project 
 Ravenous is a web app interact with the YELP Api. You can use it to lookup restaurants located anywhere. Using a variaty of additional options, you can sort your search by best match, highest rated and most reviewed. 
 
 This project is a solution to the open Ravenous project on codecademy.
 
-## Technologies used
+### Technologies used
 
 - React Create App - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - React - Used to build web application
@@ -17,7 +17,7 @@ This project is a solution to the open Ravenous project on codecademy.
 - Javascript - Core programming languages
 - Css - As I was new to React Boostrap, I used css to style add additional styling to react elements, when I couldn't figure how to do it from Boostrap.
 
-## Challenges
+### Challenges
 
 The project was divided in 4 parts:
 1. - Creating project & Components - Focused on making a static site using all react component, splited my page into a business, business list & search bar component. Also made a dummy business object. Challenge: Never used React Boostrap, but I needed a way to style everything, so I tried it and found it was not that hard to use, given my current React knowledge.
@@ -32,7 +32,7 @@ The project was divided in 4 parts:
 - I could integrate another api and add a list of recipe depending on your search, I would call it a home option, If you don't want to eat out.
 - I could add a tab to promote minority business, women owned business, lgbtq owned business, black owned business or even Resident Evil Fanatics owned business. Not sure, how the Yelp Api work in the back-end, but the search option seem vast.
 
-# How to install & run project
+## How to install & run project
 
 clone the project
 ```
@@ -59,7 +59,7 @@ node ./server/server.mjs
 ```
 
 
-# How to use project
+## How to use project
 
 - Add a serch term.
 - Add a location.
@@ -67,9 +67,8 @@ node ./server/server.mjs
 - Click the button.
 - See results.
 
-##  
 
-# Aknowledgement 
+## Aknowledgement 
 Thx [Felipe Gonçalves] (https://github.com/felpsg) for providing a solution and detail instruction to fix the CORS issue.
 Thx Codecademy for the awesome challenging project!
 
