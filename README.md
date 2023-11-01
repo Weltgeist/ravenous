@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Ravenous 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project description
 
-## Available Scripts
+## The purpose of your project 
+Ravenous is a web app interact with the YELP Api. You can use it to lookup restaurants located anywhere. Using a variaty of additional options, you can sort your search by best match, highest rated and most reviewed. 
 
-In the project directory, you can run:
+This project is a solution to the open Ravenous project on codecademy.
 
-### `npm start`
+## Technologies used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React Create App - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React - Used to build web application
+- React Boostrap - Used to style multiples front-end elements.
+- Express - Used to make 2nd server, it's servers as a authentification node between REST request between my React App & the YELP Api. It solves YELP cors autification dependency.
+- Fetch & Cors -  Used them for HTTP Requests and Responses & Authentication.
+- Javascript - Core programming languages
+- Css - As I was new to React Boostrap, I used css to style add additional styling to react elements, when I couldn't figure how to do it from Boostrap.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Challenges
 
-### `npm test`
+The project was divided in 4 parts:
+1. - Creating project & Components - Focused on making a static site using all react component, splited my page into a business, business list & search bar component. Also made a dummy business object. Challenge: Never used React Boostrap, but I needed a way to style everything, so I tried it and found it was not that hard to use, given my current React knowledge.
+2. - Passing information - Refactored a lot of the object and started using props. Challenge: I also needed a way to display a array of business in a grid layout. So I used lodash ''chunk'' function and React boostrap Grid.
+3. - Setting up search bar state - I had to set-up states and event handlers and fake a search by printing to the console and giving alerts when interacting with the search bar, filter selection and buttons. Challenge: I quickly realise the search bar component was too big, I had to use and learn about statefull and stateless items and split presentation components & container components.
+4. - Interacting with YELP API - In this section I read on YELP Api and added the fetch call to retrive data in the search component and add it to the App component state, so it can send the business data to business list and eventually business as a prop. Challenge: I had no knowledge of Yelp CORS authentification issue, so I had to do a bit of research to find a solution and learned about express and intermediary autentification server. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Future Work
+(A big maybe!)
+- I could add more styling, since it's my 1st crack at React Boostrap. 
+- I may add a feature to redirect to the business when clicking cards.
+- I could integrate another api and add a list of recipe depending on your search, I would call it a home option, If you don't want to eat out.
+- I could add a tab to promote minority business, women owned business, lgbtq owned business, black owned business or even Resident Evil Fanatics owned business. Not sure, how the Yelp Api work in the back-end, but the search option seem vast.
 
-### `npm run build`
+# How to install & run project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+clone the project
+```
+git clone https://github.com/Weltgeist/ravenous.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Add a .env to the root ./ravenous folder and the ./ravenous/server folder 
+Get a Yelp API key. Ref: https://elfsight.com/blog/how-to-get-and-use-yelp-api/
+Add your yelp react api key to the .env files.
+```
+REACT_APP_YELP_API_KEY = ******
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+start the ravenous react web api aka web server #1
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+start the express autentification server aka web server #2. Make sure port 3001 is used. If not change in code accordingly.
+```
+node ./server/server.mjs 
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# How to use project
 
-## Learn More
+- Add a serch term.
+- Add a location.
+- Choose a option between best match, highest rated and most reviewed.
+- Click the button.
+- See results.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Aknowledgement 
+Thx [Felipe Gonçalves] (https://github.com/felpsg) for providing a solution and detail instruction to fix the CORS issue.
+Thx Codecademy for the awesome challenging project!
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
