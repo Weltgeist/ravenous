@@ -1,6 +1,9 @@
 # Ravenous 
 
 ## Project description
+![image](https://github.com/Weltgeist/ravenous/assets/19942558/f320fab1-b395-4f25-9adc-41f5fae65144)
+
+
 
 ### The purpose of your project 
 Ravenous is a web app interact with the YELP Api. You can use it to lookup restaurants located anywhere. Using a variaty of additional options, you can sort your search by best match, highest rated and most reviewed. 
