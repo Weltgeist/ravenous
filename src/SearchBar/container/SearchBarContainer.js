@@ -24,13 +24,23 @@ function SearchBarContainer ({onYelpSearch}){
     //handle location input
     function handleSubmit(e){
         e.preventDefault();
-        alert(`searching ${filterOption} ${search} around ${location}  `)
-        console.log(`searching ${filterOption} ${search} around ${location}  `)
-        //onYelpSearch(getYelpSearch(search,location,filterOption))
-        const data = yelpCall.getYelpSearch(search,location,filterOption);
-        //Updating App with Yelp Search result.
-        data.then( responseStructured => onYelpSearch(responseStructured))
-        .catch(err => console.error(err));
+        if (search == "") {
+            alert(`search term is missing, please add  `)
+        } 
+        else if (location == "") {
+            alert(`location term is missing, please add  `)
+        }
+        else if  (filterOption == "") {
+            alert(`filtering option not selected, please select one `)
+        }else {
+            alert(`searching ${filterOption} ${search} around ${location}  `)
+            console.log(`searching ${filterOption} ${search} around ${location}  `)
+            //onYelpSearch(getYelpSearch(search,location,filterOption))
+            const data = yelpCall.getYelpSearch(search,location,filterOption);
+            //Updating App with Yelp Search result.
+            data.then( responseStructured => onYelpSearch(responseStructured))
+            .catch(err => console.error(err));
+        } 
 
         
     }
