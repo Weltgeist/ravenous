@@ -8,6 +8,7 @@ import { YelpApiConnector } from '../utils/Yelp';
 
 function App() {
 
+  const[debug,setDebug] = useState(false);
   const[searchData,setsearchData] = useState([]);
 
   function handleSearchData(data){
@@ -15,11 +16,11 @@ function App() {
     setsearchData(data);
   }
 
- //Creating Default Items 
+ //Creating Default Items, useful for debugging 
   const businessList = []
   for (let index = 0; index < 12; index++) {
     businessList.push(business)
-}
+  }
 
   function startUpdate() {
     // start search
@@ -47,7 +48,8 @@ function App() {
       <header className="App-header">
       <h1 id="site-title">Ravenous</h1>
       <SearchBarContainer onYelpSearch= {handleSearchData}/>
-      <BusinessList businessList = {searchData}/>       
+      {!debug&&<BusinessList businessList = {searchData}/>} 
+      {debug&&<BusinessList businessList = {businessList}/>}           
       </header>
     </div>
   );
