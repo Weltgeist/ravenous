@@ -20,17 +20,23 @@ function SearchBarContainer ({onYelpSearch}){
     function handleLocation(e){
         setLocation(e.target.value);
     }
+
+    // handle tab selection
+    function handleSelect(selectedKey){
+        setFilterOption(selectedKey)
+        alert(`selected ${selectedKey}`)
+    }
     
     //handle location input
     function handleSubmit(e){
         e.preventDefault();
-        if (search == "") {
+        if (search === "") {
             alert(`search term is missing, please add  `)
         } 
-        else if (location == "") {
+        else if (location === "") {
             alert(`location term is missing, please add  `)
         }
-        else if  (filterOption == "") {
+        else if  (filterOption === "") {
             alert(`filtering option not selected, please select one `)
         }else {
             alert(`searching ${filterOption} ${search} around ${location}  `)
@@ -43,12 +49,6 @@ function SearchBarContainer ({onYelpSearch}){
         } 
 
         
-    }
-
-    // handle tab selection
-    function handleSelect(selectedKey){
-        setFilterOption(selectedKey)
-        alert(`selected ${selectedKey}`)
     }
 
     return (
