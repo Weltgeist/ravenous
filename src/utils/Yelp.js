@@ -7,7 +7,6 @@ export class YelpApiConnector{
     //End Point Data
     this.API_HOST = API_HOST;
     this.SEARCH_PATH = SEARCH_PATH;
-    this.BUSINESS_PATH = "/v3/businesses/"
     this.API_KEY = process.env["REACT_APP_YELP_API_KEY"]; // https://dev.to/deammer/loading-environment-variables-in-js-apps-1p7p
     // Yelp REST API Search
     this.options = {
@@ -70,7 +69,6 @@ export function getYelpSearch(search,location,filterOption) {
     //End Point Data
     const API_HOST = "https://api.yelp.com";
     const SEARCH_PATH = "/v3/businesses/search";
-    const BUSINESS_PATH = "/v3/businesses/";
     const LOCATION_SEARCH = 'location=';
     const TERM_SEARCH = '&term=';
     const SORT_SEARCH = '&sort_by=';
