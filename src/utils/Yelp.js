@@ -77,9 +77,9 @@ export function getYelpSearch(search,location,filterOption) {
     
     // Yelp REST API filtering option
     const filteredSearch = {
-        best_match: 'best_match&limit=20',
-        rating:'rating&limit=20',
-        review_count:'review_count&limit=20'
+        best_match: 'best_match&limit=24',
+        rating:'rating&limit=24',
+        review_count:'review_count&limit=24'
 
     }
 
