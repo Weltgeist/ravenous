@@ -95,7 +95,6 @@ export function getYelpSearch(search,location,filterOption) {
     // fetch Call
     const data = fetch(`${API_HOST}${SEARCH_PATH}?${LOCATION_SEARCH}${location}${TERM_SEARCH}${search}${SORT_SEARCH}${filteredSearch[filterOption]}`, options)
         .then(response => response.json())
-        .then(response => console.log(response))
         .catch(err => console.error(err));
 
     return data;
