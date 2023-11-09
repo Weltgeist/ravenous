@@ -63,6 +63,7 @@ export class YelpApiConnector{
 }
 
 //Functional Implementation
+//TO DO: update this function to feature some class changed i did above.
 export function getYelpSearch(search,location,filterOption) {
 
   
