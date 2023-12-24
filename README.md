@@ -32,6 +32,7 @@ The project was divided in 4 parts:
 - I may add a feature to redirect to the business when clicking cards.
 - I could integrate another api and add a list of recipe depending on your search, I would call it a home option, If you don't want to eat out.
 - I could add a tab to promote minority business, women owned business, lgbtq owned business, black owned business or even Resident Evil Fanatics owned business. Not sure, how the Yelp Api work in the back-end, but the search option seem vast.
+- I could change the website site look for some specific events, and showcase restaurants that show case that events culture.
 
 ## How to install & run project
 
