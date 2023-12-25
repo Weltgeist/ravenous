@@ -58,6 +58,8 @@ start the express autentification server aka web server #2. Make sure port 3001 
 node ./server/server.mjs 
 ```
 
+The webpage should take 60s + to show-up. It will add a new tab or open your default browser automatically.
+
 ## How to use project
 
 - Add a serch term.
