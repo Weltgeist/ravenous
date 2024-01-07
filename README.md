@@ -3,8 +3,6 @@
 ## Project description
 ![image](https://github.com/Weltgeist/ravenous/assets/19942558/f320fab1-b395-4f25-9adc-41f5fae65144)
 
-
-
 ### The purpose of your project 
 Ravenous is a web app interact with the YELP Api. You can use it to lookup restaurants located anywhere. Using a variaty of additional options, you can sort your search by best match, highest rated and most reviewed. 
 
@@ -34,6 +32,7 @@ The project was divided in 4 parts:
 - I may add a feature to redirect to the business when clicking cards.
 - I could integrate another api and add a list of recipe depending on your search, I would call it a home option, If you don't want to eat out.
 - I could add a tab to promote minority business, women owned business, lgbtq owned business, black owned business or even Resident Evil Fanatics owned business. Not sure, how the Yelp Api work in the back-end, but the search option seem vast.
+- I could change the website site look for some specific events, and showcase restaurants that show case that events culture.
 
 ## How to install & run project
 
@@ -49,18 +48,17 @@ Add your yelp react api key to the .env files.
 REACT_APP_YELP_API_KEY = ******
 ```
 
-
 start the ravenous react web api aka web server #1
 ```
 npm start
 ```
-
 
 start the express autentification server aka web server #2. Make sure port 3001 is used. If not change in code accordingly.
 ```
 node ./server/server.mjs 
 ```
 
+The webpage should take 60s + to show-up. It will add a new tab or open your default browser automatically.
 
 ## How to use project
 
@@ -70,11 +68,6 @@ node ./server/server.mjs
 - Click the button.
 - See results.
 
-
 ## Aknowledgement 
 Thx [Felipe Gonçalves] (https://github.com/felpsg) for providing a solution and detail instruction to fix the CORS issue.
 Thx Codecademy for the awesome challenging project!
-
-
-
-
